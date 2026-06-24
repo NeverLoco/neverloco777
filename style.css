@@ -138,8 +138,8 @@ nav a:hover{
   box-shadow:0 0 60px rgba(255,160,0,.18);
 }
 .hero-logo img{
-    width:650px;
-    max-width:100%;
+    width:560px;
+    max-width:550%;
     border-radius:20px;
 }
 .crown{

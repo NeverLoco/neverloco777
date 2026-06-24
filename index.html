@@ -116,29 +116,18 @@
     <div><strong>Community</strong><br>Join the Discord</div>
   </section>
 </main>
-<section id="freecrypto">
-  <div class="title-row">
-    <span></span>
-    <h2>🎁 €20 FREE CRYPTO BONUS</h2>
-    <span></span>
-  </div>
 
-  <p>
-    Create an account through one of our partner casinos and make a qualifying deposit.
-  </p>
-
-  <p>
-    Once your deposit has been verified, open a ticket in our Discord server and provide proof of registration and deposit.
-  </p>
-
-  <p>
-    After verification, you will receive €20 in crypto.
-  </p>
-
-  <p>
-    Players may qualify for multiple bonuses by registering and depositing through different partner casinos.
-  </p>
 </section>
+  <div id="cryptoPopup" style="display:none; position:fixed; left:20px; bottom:20px; background:#111; border:1px solid gold; color:white; padding:20px; max-width:360px; z-index:9999; border-radius:12px;">
+  <h2>🎁 €20 Free Crypto Bonus</h2>
+  <p>Create an account through one of our partner casinos and make a qualifying deposit.</p>
+  <p>Open a ticket in our Discord and provide proof of registration and deposit.</p>
+  <p>Once verified, you will receive €20 in crypto.</p>
+  <p>Multiple bonuses are possible through different partner casinos.</p>
+  <button onclick="document.getElementById('cryptoPopup').style.display='none';" style="background:red; color:white; border:none; padding:10px 15px; border-radius:8px; cursor:pointer;">
+    Close
+  </button>
+</div>
 <footer>
   <p>
   <strong>18+</strong> Gamble responsibly. Gambling can be addictive and involves financial risk.

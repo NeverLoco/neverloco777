@@ -84,12 +84,12 @@ nav a:hover{
 }
 
 .hero{
-  min-height:560px;
+  min-height:460px;
   display:grid;
   grid-template-columns:1.05fr .95fr;
   align-items:center;
   gap:35px;
-  padding:60px 5%;
+  padding:35px 5%;
   background:
     radial-gradient(circle at 70% 40%,rgba(255,170,0,.28),transparent 34%),
     radial-gradient(circle at 20% 25%,rgba(190,0,0,.18),transparent 28%),
@@ -138,8 +138,8 @@ nav a:hover{
   box-shadow:0 0 60px rgba(255,160,0,.18);
 }
 .hero-logo img{
-    width:560px;
-    max-width:640px;
+     width:90%;
+     max-width:560px;
     border-radius:20px;
 }
 .crown{

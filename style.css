@@ -11,3 +11,10 @@ h1{color:gold} h1 span{color:red}
 .card{background:#111;border:1px solid gold;padding:20px;margin:20px auto;max-width:600px;border-radius:15px}
 .card a{display:inline-block;padding:12px 20px;background:red;color:white;text-decoration:none;border-radius:30px}
 footer{text-align:center;padding:30px;background:#000;color:#aaa}
+.casino-logo{
+width:220px;
+height:120px;
+object-fit:contain;
+display:block;
+margin:0 auto 20px;
+}

@@ -369,3 +369,23 @@ footer strong{
     text-align:center;
   }
 }
+
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  padding:30px;
+}
+
+.contact-btn{
+  background:linear-gradient(#e71919,#870000);
+  color:white;
+  text-decoration:none;
+  padding:15px 25px;
+  border-radius:8px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+

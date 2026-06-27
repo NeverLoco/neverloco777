@@ -1,45 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Disclaimer for NEVERLOCO. Important legal information about website use, liability, third-party links, gambling risk, Belgium, the Netherlands, and user responsibility." />
+
     <title>Disclaimer - NEVERLOCO</title>
+
+    <style>
+        :root {
+            --bg: #08080c;
+            --card: #12121a;
+            --card-soft: #181824;
+            --text: #f5f5f7;
+            --muted: #b8b8c7;
+            --accent: #8b5cf6;
+            --accent-2: #22d3ee;
+            --warning: #fb7185;
+            --border: rgba(255, 255, 255, 0.12);
+            --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(139, 92, 246, 0.24), transparent 35%),
+                radial-gradient(circle at top right, rgba(34, 211, 238, 0.16), transparent 32%),
+                linear-gradient(180deg, #08080c 0%, #0d0d14 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 48px;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)),
+                var(--card);
+            box-shadow: var(--shadow);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -180px;
+            bottom: -260px;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.38), transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+        }
+
+        .lead {
+            max-width: 850px;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .notice {
+            margin-top: 24px;
+            padding: 18px 20px;
+            border: 1px solid rgba(251, 113, 133, 0.38);
+            border-radius: 18px;
+            background: rgba(251, 113, 133, 0.09);
+            color: #ffe4e9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 28px;
+            margin-top: 32px;
+            align-items: start;
+        }
+
+        .toc {
+            position: sticky;
+            top: 24px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: rgba(18, 18, 26, 0.82);
+            backdrop-filter: blur(16px);
+        }
+
+        .toc strong {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            display: block;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .toc a:hover {
+            color: var(--text);
+        }
+
+        section {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: rgba(18, 18, 26, 0.82);
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 1.45rem;
+            letter-spacing: -0.03em;
+        }
+
+        p {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .warning {
+            color: #fecdd3;
+            font-weight: 700;
+        }
+
+        .footer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--border);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #050508;
+        }
+
+        .button.secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+        }
+
+        .small {
+            font-size: 0.92rem;
+            color: #9696a8;
+        }
+
+        @media (max-width: 860px) {
+            .page {
+                width: min(100% - 24px, 1120px);
+                padding: 32px 0;
+            }
+
+            .hero {
+                padding: 32px 24px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: relative;
+                top: 0;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <main class="page">
+        <header class="hero">
+            <div class="badge">Legal Notice • Disclaimer • Risk Warning</div>
 
-    <h1>Disclaimer</h1>
+            <h1>Disclaimer</h1>
 
-    <p>
-        The content on this website is provided for informational and entertainment purposes only.
-        While we strive to keep all information accurate and up to date, we make no warranties or
-        representations regarding the completeness, accuracy, reliability, or availability of any content.
-    </p>
+            <p class="lead">
+                This Disclaimer applies to NEVERLOCO, this website, its pages, content, media, links,
+                embedded services, promotions, community features, and any related online presence operated
+                under the NEVERLOCO name.
+            </p>
 
-    <p>
-        Your use of this website and any information provided is entirely at your own risk.
-        NEVERLOCO and the owner of this website shall not be held liable for any direct, indirect,
-        incidental, consequential, or other damages arising from the use of this website, its content,
-        external links, or third-party services.
-    </p>
+            <div class="notice">
+                <strong>Important:</strong>
+                By accessing or using this website, you acknowledge that you have read, understood,
+                and accepted this Disclaimer. If you do not agree with this Disclaimer, you must stop
+                using this website immediately.
+            </div>
+        </header>
 
-    <p>
-        Users are solely responsible for complying with all applicable laws and regulations in their
-        country, state, or jurisdiction.
-    </p>
+        <div class="content">
+            <nav class="toc" aria-label="Disclaimer navigation">
+                <strong>On this page</strong>
+                <a href="#general">General Information</a>
+                <a href="#no-advice">No Professional Advice</a>
+                <a href="#gambling">Gambling Risk</a>
+                <a href="#age">Age Restriction</a>
+                <a href="#jurisdiction">Belgium & Netherlands</a>
+                <a href="#responsibility">User Responsibility</a>
+                <a href="#accuracy">Accuracy</a>
+                <a href="#third-parties">Third Parties</a>
+                <a href="#liability">Liability</a>
+                <a href="#indemnity">Indemnity</a>
+                <a href="#legal-limits">Legal Limits</a>
+            </nav>
 
-    <p>
-        This website does not provide financial, legal, gambling, or professional advice.
-        Gambling involves risk and may not be legal in all jurisdictions.
-        Please gamble responsibly and only where permitted by law.
-    </p>
+            <div>
+                <section id="general">
+                    <h2>1. General Information Only</h2>
 
-    <p>
-        This website is intended for adults aged 18 years or older.
-    </p>
+                    <p>
+                        The content on this website is provided strictly for general informational,
+                        entertainment, commentary, and community purposes only.
+                    </p>
 
-    <p>
-        <a href="index.html">← Back to Home</a>
-    </p>
+                    <p>
+                        Nothing on this website should be interpreted as a personal instruction,
+                        guarantee, promise, recommendation, endorsement, professional opinion, or legally
+                        binding statement from any individual associated with NEVERLOCO.
+                    </p>
 
+                    <p>
+                        References to “NEVERLOCO”, “we”, “us”, or “our” refer to the website brand and,
+                        where applicable, its lawful operator. Such references do not create personal
+                        liability for any individual unless required by applicable law.
+                    </p>
+                </section>
+
+                <section id="no-advice">
+                    <h2>2. No Legal, Financial, Gambling, or Professional Advice</h2>
+
+                    <p>
+                        This website does not provide legal, financial, investment, tax, gambling,
+                        medical, technical, business, or any other professional advice.
+                    </p>
+
+                    <p>
+                        Any information, example, opinion, statistic, link, explanation, article,
+                        video, stream, message, promotion, or reference on this website is provided
+                        “as is” and should not be relied upon as professional guidance.
+                    </p>
+
+                    <p>
+                        You are solely responsible for obtaining advice from a qualified professional
+                        before making any decision based on anything seen, read, watched, clicked,
+                        downloaded, or discussed through this website.
+                    </p>
+                </section>
+
+                <section id="gambling">
+                    <h2>3. Gambling, Betting & Risk Warning</h2>
+
+                    <p>
+                        Any gambling, betting, casino, odds, prediction, bonus, affiliate, sponsor,
+                        or gaming-related content on this website is provided strictly for informational
+                        and entertainment purposes only.
+                    </p>
+
+                    <p class="warning">
+                        Gambling involves financial risk. You can lose money. You must never gamble
+                        with money you cannot afford to lose.
+                    </p>
+
+                    <p>
+                        NEVERLOCO does not operate a gambling platform, does not accept bets, does not
+                        process gambling payments, does not control third-party gambling services, and
+                        does not guarantee winnings, profits, odds, bonuses, withdrawals, account approval,
+                        account safety, or any other outcome.
+                    </p>
+
+                    <p>
+                        Gambling and betting laws differ per country, region, state, and jurisdiction.
+                        You are solely responsible for checking whether gambling-related information,
+                        platforms, promotions, links, bonuses, or third-party services are legal for you.
+                    </p>
+
+                    <p>
+                        If gambling is illegal in your country or jurisdiction, if you are excluded from
+                        gambling, if you are registered in a self-exclusion system, if you are restricted
+                        by law, or if you are otherwise not permitted to participate, you must not use
+                        any gambling-related information, links, promotions, or third-party services
+                        referenced on this website.
+                    </p>
+
+                    <p>
+                        If you feel that gambling may be causing problems for you or someone close to you,
+                        you should stop immediately and seek help from a qualified support organization
+                        or professional.
+                    </p>
+                </section>
+
+                <section id="age">
+                    <h2>4. Age Restriction</h2>
+
+                    <p>
+                        This website is intended for adults only.
+                    </p>
+
+                    <p>
+                        Because this website may contain gambling-related, betting-related, casino-related,
+                        or mature entertainment content, access is intended only for visitors aged
+                        <span class="strong">21 years or older</span>.
+                    </p>
+
+                    <p>
+                        By using this website, you confirm that you are at least 21 years old, or that you
+                        meet the higher legal age requirement that applies in your own country, region,
+                        state, or jurisdiction.
+                    </p>
+
+                    <p>
+                        If you are under 21, legally prohibited from viewing gambling-related content,
+                        or unable to understand the risks involved, you must stop using this website
+                        immediately.
+                    </p>
+                </section>
+
+                <section id="jurisdiction">
+                    <h2>5. Belgium, The Netherlands & International Users</h2>
+
+                    <p>
+                        This website may be accessible from Belgium, the Netherlands, and other countries.
+                        Access from a country does not mean that the content, links, services, promotions,
+                        or third-party platforms shown on this website are legal in that country.
+                    </p>
+
+                    <p>
+                        Where Belgian law applies, gambling and betting-related participation may require
+                        you to be at least 21 years old.
+                    </p>
+
+                    <p>
+                        Where Dutch law applies, minors are not allowed to gamble, and gambling-related
+                        advertising and promotions must not be targeted at minors, young adults, excluded
+                        persons, or other vulnerable groups where applicable.
+                    </p>
+
+                    <p>
+                        To apply the safest practical standard, gambling-related content on this website
+                        is intended only for users aged 21 years or older.
+                    </p>
+
+                    <p>
+                        Users from Belgium, the Netherlands, or any other jurisdiction are solely responsible
+                        for understanding and following their own local laws before using this website or any
+                        third-party service mentioned on it.
+                    </p>
+
+                    <p>
+                        NEVERLOCO does not intentionally offer illegal gambling services, does not intentionally
+                        target users who are not legally allowed to gamble, and does not accept responsibility
+                        for third-party platforms that may be unavailable, illegal, restricted, blocked,
+                        misleading, unsuitable, or unlawful in a user’s jurisdiction.
+                    </p>
+                </section>
+
+                <section id="responsibility">
+                    <h2>6. Your Responsibility</h2>
+
+                    <p>
+                        You use this website entirely at your own risk.
+                    </p>
+
+                    <p>
+                        You are solely responsible for:
+                    </p>
+
+                    <ul>
+                        <li>your actions, choices, payments, losses, and decisions;</li>
+                        <li>your compliance with local, national, and international laws;</li>
+                        <li>checking whether third-party services are legal and safe for you to use;</li>
+                        <li>protecting your own accounts, devices, passwords, personal data, and money;</li>
+                        <li>understanding the risks of gambling, betting, online platforms, downloads, links, and external services;</li>
+                        <li>leaving this website if you are not legally allowed to access its content.</li>
+                    </ul>
+
+                    <p>
+                        You agree not to hold NEVERLOCO responsible for choices you make based on content,
+                        entertainment, opinions, examples, links, promotions, third-party material, or
+                        information shown on this website.
+                    </p>
+                </section>
+
+                <section id="accuracy">
+                    <h2>7. Accuracy, Availability & Changes</h2>
+
+                    <p>
+                        We aim to keep information useful and up to date, but we do not guarantee that any
+                        content is complete, accurate, current, reliable, uninterrupted, secure, or error-free.
+                    </p>
+
+                    <p>
+                        Content may be changed, removed, outdated, unavailable, or incorrect at any time
+                        without notice.
+                    </p>
+
+                    <p>
+                        NEVERLOCO makes no warranty that this website will always be available, compatible
+                        with your device, free of bugs, free of harmful components, or suitable for your
+                        personal use.
+                    </p>
+                </section>
+
+                <section id="third-parties">
+                    <h2>8. Third-Party Links, Embeds, Sponsors & Services</h2>
+
+                    <p>
+                        This website may contain links, embeds, advertisements, affiliate links, sponsor
+                        mentions, social media content, videos, streams, payment providers, gambling operators,
+                        or other third-party services.
+                    </p>
+
+                    <p>
+                        Third-party websites and services are not owned or controlled by NEVERLOCO. We are
+                        not responsible for their content, terms, privacy practices, security, legality,
+                        availability, offers, payments, withdrawals, account decisions, restrictions, mistakes,
+                        losses, damages, or actions.
+                    </p>
+
+                    <p>
+                        Visiting or using third-party services is entirely at your own risk. You must read,
+                        understand, and accept the third party’s own terms, policies, rules, and legal
+                        requirements before using them.
+                    </p>
+
+                    <p>
+                        Some links or references may be commercial, affiliate, sponsored, or promotional in
+                        nature. This does not remove your responsibility to check whether such third-party
+                        services are legal, suitable, and safe for you.
+                    </p>
+                </section>
+
+                <section id="liability">
+                    <h2>9. Limitation of Liability</h2>
+
+                    <p>
+                        To the maximum extent permitted by applicable law, NEVERLOCO, its lawful operator,
+                        owners, contributors, partners, affiliates, sponsors, moderators, contractors, service
+                        providers, and related parties shall not be liable for any direct, indirect, incidental,
+                        consequential, special, punitive, or other damages of any kind.
+                    </p>
+
+                    <p>
+                        This includes, without limitation, damages related to gambling losses, loss of money,
+                        lost profits, lost data, account bans, service interruptions, technical issues, errors,
+                        outdated information, third-party actions, legal consequences, reputation damage,
+                        emotional distress, device damage, security issues, or any other loss arising from
+                        your use of this website.
+                    </p>
+
+                    <p>
+                        Your sole remedy for dissatisfaction with this website is to stop using it.
+                    </p>
+                </section>
+
+                <section id="indemnity">
+                    <h2>10. Indemnity</h2>
+
+                    <p>
+                        You agree to defend, indemnify, and hold harmless NEVERLOCO, its lawful operator,
+                        owners, contributors, partners, affiliates, sponsors, moderators, contractors, service
+                        providers, and related parties from any claims, losses, damages, costs, liabilities,
+                        penalties, legal fees, or expenses arising from:
+                    </p>
+
+                    <ul>
+                        <li>your use or misuse of this website;</li>
+                        <li>your violation of this Disclaimer;</li>
+                        <li>your violation of any applicable law or regulation;</li>
+                        <li>your use of third-party websites, gambling platforms, betting services, or external links;</li>
+                        <li>your own decisions, payments, losses, actions, or conduct;</li>
+                        <li>your attempt to access content or services that are not legal for you.</li>
+                    </ul>
+                </section>
+
+                <section id="legal-limits">
+                    <h2>11. Legal Limits of This Disclaimer</h2>
+
+                    <p>
+                        This Disclaimer is intended to limit liability to the maximum extent permitted by
+                        applicable law. However, nothing in this Disclaimer excludes liability that cannot
+                        legally be excluded.
+                    </p>
+
+                    <p>
+                        Mandatory consumer rights, privacy rights, data protection rights, gambling regulations,
+                        advertising rules, platform rules, and other legal protections under Belgian, Dutch,
+                        EU, or other applicable law remain unaffected.
+                    </p>
+
+                    <p>
+                        If any part of this Disclaimer is found to be invalid, unlawful, or unenforceable,
+                        the remaining sections shall continue to apply as far as legally possible.
+                    </p>
+
+                    <p>
+                        This Disclaimer should be read together with our Terms of Use, Privacy Policy,
+                        Cookie Policy, and any other legal notices available on this website.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>12. Updates to This Disclaimer</h2>
+
+                    <p>
+                        We may update this Disclaimer at any time without prior notice. The latest version
+                        will always be published on this page.
+                    </p>
+
+                    <p class="small">
+                        Last updated: 27 June 2026
+                    </p>
+                </section>
+
+                <div class="footer-actions">
+                    <a class="button" href="index.html">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
